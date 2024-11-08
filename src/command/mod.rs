@@ -19,6 +19,9 @@ pub use input_keyboard::*;
 mod input_mouse;
 pub use input_mouse::*;
 
+mod process_protection;
+pub use process_protection::*;
+
 pub trait DriverCommand: Default + Copy {
     const COMMAND_ID: u32;
 }
@@ -50,4 +53,8 @@ impl DriverCommand for DriverCommandInputMouse {
 
 impl DriverCommand for DriverCommandMetricsReportSend {
     const COMMAND_ID: u32 = 0x06;
+}
+
+impl DriverCommand for DriverCommandProcessProtection {
+    const COMMAND_ID: u32 = 0x07;
 }

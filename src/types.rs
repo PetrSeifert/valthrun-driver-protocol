@@ -1,6 +1,24 @@
+use bitflags::bitflags;
+
 use crate::utils;
 
 pub type ProcessId = u32;
+
+bitflags! {
+    #[derive(Debug, Default, Clone, Copy, PartialEq, Eq, PartialOrd, Ord)]
+    pub struct DriverFeature : u64 {
+        const MemoryRead                = 0x01;
+        const MemoryWrite               = 0x02;
+
+        const InputKeyboard             = 0x04;
+        const InputMouse                = 0x08;
+
+        const ProcessProtectionKernel   = 0x10;
+        const ProcessProtectionZenith   = 0x20;
+
+        const Metrics                   = 0x40;
+    }
+}
 
 #[derive(Debug, Clone, Copy)]
 pub enum ProcessFilter {

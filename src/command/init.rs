@@ -1,4 +1,7 @@
-use crate::utils;
+use crate::{
+    types::DriverFeature,
+    utils,
+};
 
 #[derive(Debug, Clone, Copy, Default)]
 pub struct VersionInfo {
@@ -36,6 +39,9 @@ pub struct DriverCommandInitialize {
 
     // Out:
     pub driver_version: VersionInfo,
+
+    // Out:
+    pub driver_features: DriverFeature,
 }
 
 #[derive(Debug, Clone, Copy)]
