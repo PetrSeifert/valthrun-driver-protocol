@@ -7,16 +7,17 @@ pub type ProcessId = u32;
 bitflags! {
     #[derive(Debug, Default, Clone, Copy, PartialEq, Eq, PartialOrd, Ord)]
     pub struct DriverFeature : u64 {
-        const MemoryRead                = 0x01;
-        const MemoryWrite               = 0x02;
+        const ProcessModules            = 0x00_00_00_01;
+        const ProcessProtectionKernel   = 0x00_00_00_02;
+        const ProcessProtectionZenith   = 0x00_00_00_04;
 
-        const InputKeyboard             = 0x04;
-        const InputMouse                = 0x08;
+        const MemoryRead                = 0x00_00_01_00;
+        const MemoryWrite               = 0x00_00_02_00;
 
-        const ProcessProtectionKernel   = 0x10;
-        const ProcessProtectionZenith   = 0x20;
+        const InputKeyboard             = 0x00_01_00_00;
+        const InputMouse                = 0x00_02_00_00;
 
-        const Metrics                   = 0x40;
+        const Metrics                   = 0x01_00_00_00;
     }
 }
 
