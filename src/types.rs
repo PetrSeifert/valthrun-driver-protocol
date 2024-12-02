@@ -67,6 +67,9 @@ pub enum MemoryAccessResult {
     PartialSuccess { bytes_copied: usize },
 
     ProcessUnknown,
+
+    SourcePagedOut,
+    DestinationPagedOut,
 }
 
 impl Default for MemoryAccessResult {
