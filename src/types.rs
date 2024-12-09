@@ -42,6 +42,7 @@ impl Default for ProcessFilter {
 pub struct ProcessInfo {
     pub process_id: ProcessId,
     pub image_base_name: [u8; 0x0F],
+    pub directory_table_base: u64,
 }
 
 impl ProcessInfo {
@@ -59,6 +60,7 @@ impl Default for ProcessInfo {
         Self {
             process_id: 0,
             image_base_name: [0; 0x0F],
+            directory_table_base: 0,
         }
     }
 }
