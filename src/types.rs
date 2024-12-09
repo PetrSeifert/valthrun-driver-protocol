@@ -26,19 +26,6 @@ bitflags! {
 }
 
 #[derive(Debug, Clone, Copy)]
-pub enum ProcessFilter {
-    None,
-    Id { id: ProcessId },
-    ImageBaseName { name: *const u8, name_length: usize },
-}
-
-impl Default for ProcessFilter {
-    fn default() -> Self {
-        Self::None
-    }
-}
-
-#[derive(Debug, Clone, Copy)]
 pub struct ProcessInfo {
     pub process_id: ProcessId,
     pub image_base_name: [u8; 0x0F],
