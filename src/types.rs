@@ -15,13 +15,12 @@ bitflags! {
         const MemoryRead                = 0x00_00_01_00;
         const MemoryWrite               = 0x00_00_02_00;
 
-        const DttExplicit               = 0x00_00_10_00;
-        const DttCR3Sshenanigans        = 0x00_00_20_00;
-
         const InputKeyboard             = 0x00_01_00_00;
         const InputMouse                = 0x00_02_00_00;
 
         const Metrics                   = 0x01_00_00_00;
+        const DttExplicit               = 0x02_00_10_00;
+        const CR3Sshenanigans           = 0x04_00_00_00;
     }
 }
 

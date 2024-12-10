@@ -22,6 +22,9 @@ pub use input_mouse::*;
 mod process_protection;
 pub use process_protection::*;
 
+mod cr3;
+pub use cr3::*;
+
 pub trait DriverCommand: Default + Copy {
     const COMMAND_ID: u32;
 }
@@ -46,3 +49,6 @@ define_command!(DriverCommandInputKeyboard, 0x05);
 define_command!(DriverCommandInputMouse, 0x06);
 define_command!(DriverCommandMetricsReportSend, 0x07);
 define_command!(DriverCommandProcessProtection, 0x08);
+
+define_command!(DriverCommandCr3ShenanigansEnable, 0x09);
+define_command!(DriverCommandCr3ShenanigansDisable, 0x0A);
