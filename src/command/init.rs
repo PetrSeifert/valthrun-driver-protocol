@@ -3,6 +3,7 @@ use crate::{
     utils,
 };
 
+#[repr(C)]
 #[derive(Debug, Clone, Copy, Default)]
 pub struct VersionInfo {
     pub application_name: [u8; 0x20],
@@ -21,6 +22,7 @@ impl VersionInfo {
     }
 }
 
+#[repr(C)]
 #[derive(Debug, Clone, Copy, Default)]
 pub struct DriverCommandInitialize {
     /* The order of the first few fields should be consistent accross versions. */
@@ -44,6 +46,7 @@ pub struct DriverCommandInitialize {
     pub driver_features: DriverFeature,
 }
 
+#[repr(C)]
 #[derive(Debug, Clone, Copy)]
 pub enum InitializeResult {
     Success,
